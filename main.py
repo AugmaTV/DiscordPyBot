@@ -15,7 +15,9 @@ async def send_message(message: Message, user_message: str) -> None:
     if not user_message:
         print("Message empty cuz intent not enable probably")
 
-    if is_private := user_message[0] == "?":
+    is_private = user_message[0] == "?";
+
+    if is_private:
         user_message = user_message[1:]
 
     try:
